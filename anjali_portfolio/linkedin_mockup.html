@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anjali Rathore | LinkedIn</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif; }
+        body { background-color: #f3f2ef; color: rgba(0,0,0,0.9); }
+        
+        /* Browser bar mockup */
+        .browser-bar {
+            background-color: #202124;
+            color: #fff;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+        }
+        .browser-tab {
+            background-color: #35363a;
+            padding: 6px 14px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+        }
+        .browser-url-bar {
+            background-color: #282a2d;
+            border-radius: 20px;
+            padding: 6px 16px;
+            flex: 1;
+            max-width: 550px;
+            font-size: 13px;
+            color: #e8eaed;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* LinkedIn Nav */
+        .nav-bar {
+            background: #fff;
+            border-bottom: 1px solid #e0dfdc;
+            padding: 0 40px;
+            height: 53px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .linkedin-logo {
+            background: #0a66c2;
+            color: #fff;
+            font-weight: 800;
+            font-size: 20px;
+            width: 34px;
+            height: 34px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-box {
+            background: #edf3f8;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            width: 280px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 12px;
+            color: rgba(0,0,0,0.6);
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            cursor: pointer;
+        }
+        .nav-item.active {
+            color: rgba(0,0,0,0.9);
+            border-bottom: 2px solid #000;
+            padding-bottom: 4px;
+        }
+
+        /* Layout */
+        .main-container {
+            max-width: 1128px;
+            margin: 24px auto;
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 24px;
+            padding: 0 16px;
+        }
+
+        /* Profile Card */
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #e0dfdc;
+            overflow: hidden;
+            margin-bottom: 12px;
+        }
+        .banner-wrap {
+            height: 180px;
+            background: linear-gradient(120deg, #94a3b8 0%, #cbd5e1 60%, #e2e8f0 100%);
+            position: relative;
+        }
+        .camera-icon {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #fff;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+        .profile-body {
+            padding: 0 24px 24px 24px;
+            position: relative;
+        }
+        .avatar-wrap {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            position: absolute;
+            top: -100px;
+            left: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            background: #fff;
+        }
+        .avatar-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .edit-icon {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 18px;
+            color: rgba(0,0,0,0.6);
+            cursor: pointer;
+        }
+        .profile-info {
+            padding-top: 70px;
+        }
+        .name-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            color: rgba(0,0,0,0.9);
+        }
+        .verify-badge {
+            border: 1px solid #0a66c2;
+            color: #0a66c2;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 16px;
+        }
+        .headline {
+            font-size: 15px;
+            color: rgba(0,0,0,0.9);
+            margin-bottom: 6px;
+            font-weight: 400;
+        }
+        .location {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+            margin-bottom: 8px;
+        }
+        .location a {
+            color: #0a66c2;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .connections {
+            font-size: 14px;
+            color: #0a66c2;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 8px;
+        }
+        .btn-primary {
+            background: #0a66c2;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+        }
+        .btn-secondary {
+            background: #fff;
+            color: #0a66c2;
+            border: 1px solid #0a66c2;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .btn-outline {
+            background: #fff;
+            color: rgba(0,0,0,0.6);
+            border: 1px solid rgba(0,0,0,0.6);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Suggested Section */
+        .suggested-card {
+            padding: 20px 24px;
+        }
+        .suggested-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .suggested-sub {
+            font-size: 13px;
+            color: rgba(0,0,0,0.6);
+            margin-bottom: 16px;
+        }
+        .prompt-item {
+            border: 1px solid #e0dfdc;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Right Sidebar */
+        .side-card {
+            padding: 20px;
+        }
+        .side-item {
+            margin-bottom: 18px;
+        }
+        .side-label {
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+        .side-sub {
+            font-size: 14px;
+            color: rgba(0,0,0,0.6);
+        }
+        .side-url {
+            font-size: 13px;
+            color: rgba(0,0,0,0.6);
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Browser Bar -->
+    <div class="browser-bar">
+        <div class="browser-tab">
+            <span>in</span> Anjali Rathore | LinkedIn
+        </div>
+        <div class="browser-url-bar">
+            <span>🔒</span> linkedin.com/in/anjali-rathore-bca/
+        </div>
+    </div>
+
+    <!-- LinkedIn Top Nav -->
+    <div class="nav-bar">
+        <div class="nav-left">
+            <div class="linkedin-logo">in</div>
+            <div class="search-box">🔍 Search</div>
+        </div>
+        <div class="nav-right">
+            <div class="nav-item">🏠 Home</div>
+            <div class="nav-item">👥 My Network</div>
+            <div class="nav-item">💼 Jobs</div>
+            <div class="nav-item">💬 Messaging</div>
+            <div class="nav-item">🔔 Notifications</div>
+            <div class="nav-item active">👤 Me ▼</div>
+            <div style="border-left: 1px solid #e0dfdc; height: 32px; margin: 0 4px;"></div>
+            <div class="nav-item">▦ For Business ▼</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+
+        <!-- Left Column -->
+        <div>
+            <!-- Profile Card -->
+            <div class="card">
+                <div class="banner-wrap">
+                    <div class="camera-icon">📷</div>
+                </div>
+                <div class="profile-body">
+                    <div class="avatar-wrap">
+                        <img src="anjali_profile.jpg" alt="Anjali Rathore">
+                    </div>
+                    <div class="edit-icon">✏️</div>
+                    <div class="profile-info">
+                        <div class="name-row">
+                            <h1 class="name">Anjali Rathore</h1>
+                            <span class="verify-badge">🛡️ Verify in 2 minutes</span>
+                        </div>
+                        <div class="headline">BCA Student | AI & Data Science | Python | Web Development</div>
+                        <div class="location">Delhi, India &bull; <a href="#">Contact info</a></div>
+                        <div class="connections">1 connection</div>
+                        <div class="btn-group">
+                            <button class="btn-primary">Open to</button>
+                            <button class="btn-secondary">Add section</button>
+                            <button class="btn-secondary">Enhance profile</button>
+                            <button class="btn-outline">More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggested for you -->
+            <div class="card suggested-card">
+                <div class="suggested-title">Suggested for you</div>
+                <div class="suggested-sub">👁️ Private to you</div>
+                <div class="prompt-item">
+                    <div>
+                        <strong style="font-size: 14px;">Write a summary to highlight your personality or work experience</strong>
+                        <p style="font-size: 13px; color: rgba(0,0,0,0.6); margin-top: 4px;">Members who include a summary receive up to 3.9 times more profile views.</p>
+                    </div>
+                    <button class="btn-secondary" style="white-space: nowrap;">Add summary</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+            <div class="card side-card">
+                <div class="side-item">
+                    <div class="side-label">Profile language <span>✏️</span></div>
+                    <div class="side-sub">English</div>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #e0dfdc; margin-bottom: 16px;">
+                <div class="side-item">
+                    <div class="side-label">Public profile & URL <span>✏️</span></div>
+                    <div class="side-url">www.linkedin.com/in/anjali-rathore-bca</div>
+                </div>
+            </div>
+
+            <div class="card side-card">
+                <div class="side-label" style="font-size: 15px; margin-bottom: 12px;">Who your viewers also viewed</div>
+                <div style="font-size: 13px; color: rgba(0,0,0,0.6); line-height: 1.6;">
+                    Students and developers across Computer Applications, Artificial Intelligence, and Technology.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

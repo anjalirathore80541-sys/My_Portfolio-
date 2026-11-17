@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjali Rathore | Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #06b6d4;
+            --accent-hover: #0891b2;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --hero-bg: #eef2f6;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, #0f172a 0%, #06b6d4 100%);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 8px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-social-btn {
+            background: #0f172a;
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.82rem !important;
+            transition: all 0.2s ease;
+        }
+
+        .nav-social-btn:hover {
+            background: #0284c7 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Hero Section */
+        .hero-card {
+            background-color: var(--hero-bg);
+            border-radius: 28px;
+            padding: 56px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            margin-bottom: 56px;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .tag-badge {
+            display: inline-block;
+            color: #0284c7;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: #475569;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            max-width: 580px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.88rem;
+            letter-spacing: 0.8px;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+        }
+
+        .hero-cta:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #ffffff;
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+            font-weight: 700;
+            font-size: 0.88rem;
+            letter-spacing: 0.8px;
+            padding: 13px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta-secondary:hover {
+            background-color: #f1f5f9;
+            border-color: #94a3b8;
+            transform: translateY(-2px);
+        }
+
+        .hero-image-wrap {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-frame {
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #ffffff 100%);
+            box-shadow: 0 12px 36px rgba(6, 182, 212, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ffffff;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.7;
+            max-width: 800px;
+        }
+
+        /* Skills Badges */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill-pill {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            font-weight: 700;
+            font-size: 0.92rem;
+            padding: 10px 22px;
+            border-radius: 24px;
+            border: 1px solid #bae6fd;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .skill-pill:hover {
+            background-color: #0284c7;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 32px 28px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+
+        .project-card:hover {
+            border-color: #38bdf8;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0284c7;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .project-footer {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .project-tag {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #0f172a;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+
+        .project-link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #0284c7;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Connect Banner */
+        .connect-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 32px;
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-btn.linkedin {
+            background: #0a66c2;
+            color: #ffffff;
+        }
+
+        .social-btn.linkedin:hover {
+            background: #084e96;
+            transform: translateY(-2px);
+        }
+
+        .social-btn.github {
+            background: #24292f;
+            color: #ffffff;
+        }
+
+        .social-btn.github:hover {
+            background: #0f172a;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #ffffff;
+            padding: 28px 0;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+
+        @media (max-width: 868px) {
+            .hero-card {
+                flex-direction: column-reverse;
+                padding: 40px 28px;
+                text-align: center;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-desc {
+                margin: 0 auto 28px auto;
+            }
+            .hero-image-wrap {
+                margin-bottom: 16px;
+            }
+            .photo-frame {
+                width: 200px;
+                height: 200px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .connect-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <span class="logo-badge">AR</span>
+            <span>ANJALI RATHORE</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="https://github.com/anjalirathore80541-sys" target="_blank" class="nav-social-btn">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/anjali-rathore-a9436930b/" target="_blank" class="nav-social-btn" style="background:#0a66c2;">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero-card">
+            <div class="hero-content">
+                <span class="tag-badge">BCA &bull; AI & DATA SCIENCE</span>
+                <h1 class="hero-title">Turning Ideas<br>into Impact.</h1>
+                <p class="hero-desc">
+                    I am Anjali Rathore, a student interested in AI, Data Science, data-driven solutions, web development, and UI/UX design. I enjoy combining analytical thinking with creativity to build useful digital experiences.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="hero-cta">EXPLORE PROJECTS</a>
+                    <a href="https://github.com/anjalirathore80541-sys" target="_blank" class="hero-cta-secondary">💻 GitHub Profile</a>
+                    <a href="https://www.linkedin.com/in/anjali-rathore-a9436930b/" target="_blank" class="hero-cta-secondary" style="color:#0a66c2;">🔗 LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="hero-image-wrap">
+                <div class="photo-frame">
+                    <img src="anjali_profile.jpg" alt="Anjali Rathore">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-desc">
+                I am developing my skills through academic learning at K.R. Mangalam University (School of Engineering and Technology), hands-on practical projects, and continuous exploration of Artificial Intelligence, programming, and web technologies.
+            </p>
+        </section>
+
+        <!-- Skills & Interests -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills & Interests</h2>
+            <div class="skills-grid">
+                <div class="skill-pill">Python</div>
+                <div class="skill-pill">Data Analysis</div>
+                <div class="skill-pill">AI Fundamentals</div>
+                <div class="skill-pill">Web Development</div>
+                <div class="skill-pill">UI/UX Design</div>
+                <div class="skill-pill">Machine Learning</div>
+                <div class="skill-pill">SQL & Databases</div>
+            </div>
+        </section>
+
+        <!-- Projects & Learning -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects & Learning</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div>
+                        <h3>Data & Analytics</h3>
+                        <p>Exploratory data analysis project built with Python and Pandas, deriving visual patterns and actionable insights from structured datasets.</p>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-tag">Python &bull; Pandas</span>
+                        <a href="https://github.com/anjalirathore80541-sys" target="_blank" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div>
+                        <h3>Web Development</h3>
+                        <p>Responsive, mobile-first portfolio and web interfaces built with modern HTML5, clean CSS layouts, and dynamic interactivity.</p>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-tag">HTML5 &bull; CSS3 &bull; JS</span>
+                        <a href="https://github.com/anjalirathore80541-sys" target="_blank" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div>
+                        <h3>AI Learning</h3>
+                        <p>Hands-on experiments with foundational Machine Learning workflows, feature engineering, and predictive model pipelines.</p>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-tag">AI Models &bull; Scikit-Learn</span>
+                        <a href="https://github.com/anjalirathore80541-sys" target="_blank" class="project-link">View Code &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Connect With Me</h2>
+            <p class="section-desc">
+                Interested in collaborating on a project or discussing AI & technology? Let's connect on LinkedIn or explore my code repositories on GitHub.
+            </p>
+            <div class="connect-box">
+                <div>
+                    <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 6px;">Anjali Rathore</h3>
+                    <p style="color: #64748b; font-size: 0.95rem;">📍 Gurugram, Haryana &bull; 🎓 K.R. Mangalam University (BCA - AI & Data Science)</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/anjali-rathore-a9436930b/" target="_blank" class="social-btn linkedin">
+                        <span>in</span> Connect on LinkedIn
+                    </a>
+                    <a href="https://github.com/anjalirathore80541-sys" target="_blank" class="social-btn github">
+                        <span>💻</span> View GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>ANJALI RATHORE &bull; <span>TURNING IDEAS INTO IMPACT</span></p>
+    </footer>
+
+</body>
+</html>
